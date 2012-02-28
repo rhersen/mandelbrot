@@ -14,11 +14,6 @@ public class Gradient {
 	private final int numColours;
 	private int[][] colourTable;
 	
-	/**
-	 * Creates a gradient object with the given number of unique
-	 * colours cycling between the given list of fixed colour points
-	 * @param colours
-	 */
 	public Gradient(int numColours, Color... colours) {
 		this.numColours = numColours;
 		generateColourTable(colours);
@@ -41,9 +36,9 @@ public class Gradient {
 	private void fillColour(int startIndex, int numGrades, Color fromColour, Color toColour) {
 		for (int i = startIndex; i < startIndex + numGrades; i++) {
 			//Get the average red, blue and green between the from and to colours at this index
-			int r = fromColour.getRed() + (int) ((toColour.getRed() - fromColour.getRed()) * (i-startIndex) / numGrades);
-			int g = fromColour.getGreen() + (int) ((toColour.getGreen() - fromColour.getGreen()) * (i-startIndex) / numGrades);
-			int b = fromColour.getBlue() + (int) ((toColour.getBlue() - fromColour.getBlue()) * (i-startIndex) / numGrades);
+			int r = fromColour.getRed() + (toColour.getRed() - fromColour.getRed()) * (i-startIndex) / numGrades;
+			int g = fromColour.getGreen() + (toColour.getGreen() - fromColour.getGreen()) * (i-startIndex) / numGrades;
+			int b = fromColour.getBlue() + (toColour.getBlue() - fromColour.getBlue()) * (i-startIndex) / numGrades;
 			colourTable[i] = new int[] {r, g, b};
 		}
 	}

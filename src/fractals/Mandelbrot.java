@@ -135,7 +135,6 @@ public class Mandelbrot implements Fractal {
 			this.iterations = iterations;
 		}
 		
-		@Override
 		public void run() {
 			for (int y = yPos; y < yLimit; y++) {
 				if (cancelled) break;

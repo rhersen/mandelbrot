@@ -65,8 +65,8 @@ public class FractalRenderer implements Runnable {
 	/**
 	 * Runs an infinite loop in order to synchronise events for
 	 * drawing and resizing the Fractal
-	 */
-	@Override
+     * @noinspection InfiniteLoopStatement
+     */
 	public void run() {
 		while(true) {
 			if (resized) {
